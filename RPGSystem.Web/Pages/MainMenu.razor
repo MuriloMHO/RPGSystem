@@ -1,0 +1,15 @@
+﻿@page "/mainmenu"
+
+@inject GameSessionState CurrentSession
+
+@if (CurrentSession.CurrentGame != null)
+{
+    <a href="">New Character</a>
+    <a href="inventory">Inventory</a>
+    <a href="areas">Areas</a>
+    <a href="shop">Shop</a>
+}
+else
+{
+    <p>No active game found.</p>
+}

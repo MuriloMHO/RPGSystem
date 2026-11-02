@@ -1,0 +1,73 @@
+﻿@page "/areas"
+
+@inject GameSessionState CurrentSession
+
+@using RPGSystem.Areas
+@using RPGSystem.Areas.AreaTypes
+
+<a href="mainmenu">Main Menu</a>
+
+@if (CurrentSession?.CurrentGame != null)
+{
+    @foreach (Area area in areas)
+    {
+        <button @onclick="() => SelectArea(area)">@area.Name</button>
+        <p>Required Level: @area.RequiredLevel</p>
+    }
+
+    @if (selectedArea != null)
+    {
+        <p>Selected Area</p>
+        <p>Name: @selectedArea.Name</p>
+        <p>Required Level: @selectedArea.RequiredLevel</p>
+
+    }
+
+    <button disabled="@(selectedArea == null)" @onclick="() => SelectArea(null)">Unselect Area</button>
+
+    <button disabled="@(selectedArea == null || CurrentSession.CurrentGame == null)" @onclick="BeginEncounter">Begin Encounter</button>
+
+    @if (CurrentSession?.CurrentGame?.CurrentEncounter?.Area != null && 
+        CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
+    {
+        <p>Encounter Started</p>
+        <p>Active Encounter: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
+        <a href="encounter">Battle</a>
+    }
+    else if (encounterStarted == false)
+    {
+        <p>Could not Start an Encounter</p>
+    }
+}
+else
+{
+    <p>No active game found</p>
+}
+
+@code{
+    List<Area> areas = [
+    new GreenFields(),
+    new DarkForest(),
+    new OrcCamp(),
+    new RuinedHighlands(),
+    new CursedCrypt(),
+    new DarkCitadel()
+    ];
+
+    Area? selectedArea;
+
+    bool? encounterStarted = null;
+
+    private void SelectArea(Area? area)
+    {
+        selectedArea = area;
+    }
+
+    private void BeginEncounter()
+    {
+        if (selectedArea != null && CurrentSession.CurrentGame != null)
+        {
+            encounterStarted = CurrentSession.CurrentGame.NewEncounter(selectedArea);
+        }
+    }
+}

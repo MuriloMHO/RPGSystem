@@ -1,0 +1,76 @@
+﻿@page "/inventory"
+@inject GameSessionState CurrentSession
+@using RPGSystem.Items
+
+<a href="mainmenu">Main Menu</a>
+<h1>Inventory</h1>
+
+@if(CurrentSession.CurrentGame != null)
+{
+    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+    <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+    <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+
+    @foreach (Item item in CurrentSession.CurrentGame.Player.Inventory)
+    {
+        <button @onclick="() => Select(item)">
+            @item.Name
+        </button>
+    }
+
+    @if (CurrentSession.CurrentGame != null &&
+        CurrentSession.CurrentGame.Player.Inventory.Count < 1)
+    {
+        <p>Inventory is empty</p>
+    }
+
+    <button disabled="@(selectedItem == null)" @onclick="() => Select(null)">Clear Selection</button>
+
+    @if (selectedItem != null)
+    {
+        <p>Name: @selectedItem.Name</p>
+        <p>Value: @selectedItem.Value</p>
+        <p>Cost: @selectedItem.Cost</p>
+
+        <button disabled="@(!canBeUsed)" @onclick="UseItemInventory">Use Item</button>
+    }
+
+    @if (CurrentSession.CurrentGame?.CurrentEncounter != null &&
+        CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
+    {
+        <a href="encounter">Return to battle</a>
+    }
+}
+
+@code{
+    Item? selectedItem;
+
+    bool canBeUsed = true;
+
+    private void Select(Item? item)
+    {
+        selectedItem = item;
+        canBeUsed = true;
+    }
+
+    private void UseItemInventory()
+    {
+        if (selectedItem != null && CurrentSession.CurrentGame != null)
+        {
+            if (CurrentSession?.CurrentGame?.CurrentEncounter != null &&
+                CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
+            {
+                canBeUsed = CurrentSession.CurrentGame.CurrentEncounter.UseItem(selectedItem);
+            }
+            else
+            {
+                canBeUsed = CurrentSession!.CurrentGame.UseItemOutOfBattle(selectedItem);
+            }
+
+            if (canBeUsed)
+            {
+                selectedItem = null;
+            }
+        }
+    }
+}

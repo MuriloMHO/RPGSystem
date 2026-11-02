@@ -1,0 +1,59 @@
+﻿@page "/shop"
+
+@inject GameSessionState CurrentSession
+@using RPGSystem.Items
+
+@if (CurrentSession.CurrentGame != null)
+{
+    <a href="mainmenu">Main Menu</a>
+
+    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+    <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+
+    @foreach (Item item in CurrentSession.CurrentGame.ItemsToSell)
+    {
+        <button @onclick="() => Select(item)">
+            @item.Name
+        </button>
+    }
+
+    <button disabled="@(selectedItem == null)" @onclick="() => Select(null)">Clear Selection</button>
+
+    @if (selectedItem != null)
+    {
+        <p>Name: @selectedItem.Name</p>
+        <p>Value: @selectedItem.Value</p>
+        <p>Cost: @selectedItem.Cost</p>
+
+        <button @onclick="BuyItem">Buy Item</button>
+
+        @if (bought == true)
+        {
+            <p>Thansk for buying @selectedItem.Name</p>
+        }
+        else if (bought == false)
+        {
+            <p>Sorry, transaction failed</p>
+        }
+    }
+}
+
+@code {
+    Item? selectedItem;
+
+    bool? bought = null;
+
+    private void Select(Item? item)
+    {
+        selectedItem = item;
+        bought = null;
+    }
+
+    private void BuyItem()
+    {
+        if (CurrentSession.CurrentGame != null)
+        {
+            bought = CurrentSession.CurrentGame.BuyFromShop(selectedItem);
+        }
+    }
+}

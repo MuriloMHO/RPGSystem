@@ -1,0 +1,48 @@
+﻿@page "/"
+@inject GameSessionState CurrentSession
+@using RPGSystem.Characters.Players
+@using RPGSystem.Characters.Players.PlayerClasses
+
+<h1>Please enter a name and choose your class.</h1>
+
+<input @bind="playerName"/>
+
+<button @onclick="ChooseKnight">Knight</button>
+
+<button @onclick="ChooseArcher">Archer</button>
+
+<button @onclick="ChooseMage">Mage</button>
+
+@if (CurrentSession.CurrentGame != null && CurrentSession.CurrentGame.Player.Name != null)
+{
+    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+    <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+    <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+
+    <a href="mainmenu">Main Menu</a>
+}
+
+@code {
+    string? playerName;
+
+    Player? player;
+
+    public void ChooseKnight()
+    {
+        player = new Knight(playerName);
+
+        CurrentSession.CurrentGame = new(player);
+    }
+    public void ChooseArcher()
+    {
+        player = new Archer(playerName);
+
+        CurrentSession.CurrentGame = new(player);
+    }
+    public void ChooseMage()
+    {
+        player = new Mage(playerName);
+
+        CurrentSession.CurrentGame = new(player);
+    }
+}

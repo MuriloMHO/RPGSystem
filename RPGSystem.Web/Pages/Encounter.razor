@@ -1,0 +1,85 @@
+﻿@page "/encounter"
+
+@inject GameSessionState CurrentSession
+
+@if (CurrentSession?.CurrentGame != null)
+{
+    @if (CurrentSession.CurrentGame.CurrentEncounter != null)
+    {
+        @if (CurrentSession.CurrentGame.CurrentEncounter.Area != null && 
+            CurrentSession.CurrentGame.CurrentEncounter.Enemy != null)
+        {
+            <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
+            <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
+
+            <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
+
+            <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
+            <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+            <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+            <p>Experience: @CurrentSession.CurrentGame.Player.Experience</p>
+            <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+            <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
+
+            <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
+            <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
+
+            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
+            <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>
+            <a href="inventory">Inventory</a>
+            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
+
+            @if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory)
+            {
+                <p>You won the battle</p>
+                <a href="areas">Areas</a>
+            }
+            else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Escaped)
+            {
+                <p>You escaped successfully</p>
+                <a href="areas">Areas</a>
+            }
+            else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Defeat)
+            {
+                <p>Game Over! b'_')b</p>
+                <a href="">Home</a>
+            }
+        }
+        else
+        {
+            <p>No active encounter found</p>
+        }
+    }
+    else
+    {
+        <p>No encounter found</p>
+    }
+}
+else
+{
+    <p>No active game found</p>
+}
+
+@code{
+    private void EncounterAttack()
+    {
+        if(CurrentSession?.CurrentGame?.CurrentEncounter != null)
+        {
+            CurrentSession.CurrentGame.CurrentEncounter.Attack();
+        }
+    }
+    private void EncounterSkill()
+    {
+        if (CurrentSession?.CurrentGame?.CurrentEncounter != null)
+        {
+            CurrentSession.CurrentGame.CurrentEncounter.Skill();
+        }
+    }
+    private void EncounterFlee()
+    {
+        if (CurrentSession?.CurrentGame?.CurrentEncounter != null)
+        {
+            CurrentSession.CurrentGame.CurrentEncounter.Flee();
+        }
+    }
+}
