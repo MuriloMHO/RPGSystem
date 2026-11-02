@@ -1,0 +1,299 @@
+{
+  "title": "RPGSystem Approved Visual Assets",
+  "version": "1.0",
+  "total_assets": 15,
+  "status": "Visually approved; format and alpha checks passed; Blazor integration not yet verified",
+  "files": [
+    {
+      "category": "Players",
+      "name": "Knight",
+      "file": "RPGSystem_Knight_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 35370,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        12,
+        12,
+        244,
+        243
+      ],
+      "canvas_padding_px": {
+        "left": 12,
+        "top": 12,
+        "right": 12,
+        "bottom": 13
+      },
+      "sha256": "50a18f259dd5ab86438f48a0b98fe78bb1d457c034a4a24f87cce677022f075f"
+    },
+    {
+      "category": "Players",
+      "name": "Archer",
+      "file": "RPGSystem_Archer_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 41994,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        12,
+        30,
+        244,
+        226
+      ],
+      "canvas_padding_px": {
+        "left": 12,
+        "top": 30,
+        "right": 12,
+        "bottom": 30
+      },
+      "sha256": "db5973c7fe91462bd8de86040b14415c828d34e31306bd86b495b309d75e4a76"
+    },
+    {
+      "category": "Players",
+      "name": "Mage",
+      "file": "RPGSystem_Mage_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 43549,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        12,
+        24,
+        244,
+        231
+      ],
+      "canvas_padding_px": {
+        "left": 12,
+        "top": 24,
+        "right": 12,
+        "bottom": 25
+      },
+      "sha256": "6c0e1e34c45b09378fb890e827c58d3de5c044944217737a582235ca2605f286"
+    },
+    {
+      "category": "Enemies",
+      "name": "Goblin",
+      "file": "RPGSystem_Goblin_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 38468,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        16,
+        37,
+        240,
+        244
+      ],
+      "canvas_padding_px": {
+        "left": 16,
+        "top": 37,
+        "right": 16,
+        "bottom": 12
+      },
+      "sha256": "9d4cc5c8c5ff512f1b52a6ce39bf51fd073a63dfbadf0d5b11b23bf53ec2717c"
+    },
+    {
+      "category": "Enemies",
+      "name": "Wolf",
+      "file": "RPGSystem_Wolf_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 47832,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        12,
+        105,
+        244,
+        235
+      ],
+      "canvas_padding_px": {
+        "left": 12,
+        "top": 105,
+        "right": 12,
+        "bottom": 21
+      },
+      "sha256": "a6137b37b1f15aaa79217d1ba557972e84f61dafd6dc8deff2d4b85764994da3"
+    },
+    {
+      "category": "Enemies",
+      "name": "Orc",
+      "file": "RPGSystem_Orc_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 39946,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        13,
+        34,
+        243,
+        221
+      ],
+      "canvas_padding_px": {
+        "left": 13,
+        "top": 34,
+        "right": 13,
+        "bottom": 35
+      },
+      "sha256": "ed592f4c30435ecec07b16843b36ecb3d1ed3fda81adf6c989538b278b33edab"
+    },
+    {
+      "category": "Enemies",
+      "name": "Troll",
+      "file": "RPGSystem_Troll_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 41071,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        9,
+        40,
+        247,
+        216
+      ],
+      "canvas_padding_px": {
+        "left": 9,
+        "top": 40,
+        "right": 9,
+        "bottom": 40
+      },
+      "sha256": "a84c4f19d9f077ce46d46bf32b57c7d6ad82d525c952f67b129bc1c08adb65bd"
+    },
+    {
+      "category": "Enemies",
+      "name": "Necromancer",
+      "file": "RPGSystem_Necromancer_FacingLeft_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 40800,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        12,
+        13,
+        244,
+        243
+      ],
+      "canvas_padding_px": {
+        "left": 12,
+        "top": 13,
+        "right": 12,
+        "bottom": 13
+      },
+      "sha256": "c6d6ae40cc0a22ad49a75e0dbe26bcfa7ed6a3a710b6438306f6fc63bd7cd272"
+    },
+    {
+      "category": "Enemies",
+      "name": "DarkLord",
+      "file": "RPGSystem_DarkLord_ReferenceStyle_256x256.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "transparent_pixels": 38000,
+      "partial_alpha_pixels": 0,
+      "alpha_bbox": [
+        24,
+        12,
+        232,
+        244
+      ],
+      "canvas_padding_px": {
+        "left": 24,
+        "top": 12,
+        "right": 24,
+        "bottom": 12
+      },
+      "sha256": "e39aa9b2aecb0afbab88e3a98b39b7e7ca2473e934230904884fc6885d479e7c"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "GreenFields",
+      "file": "RPGSystem_GreenFields_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "1e0fb1300aeefc7562418641f9cb0635bfa558ea92cbcbce9fe48bb6afff7090"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "DarkForest",
+      "file": "RPGSystem_DarkForest_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "585ae189c9cb6a65aad8663364a86fd4cfafbf66fb22c4e6013b8693675f87ac"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "OrcCamp",
+      "file": "RPGSystem_OrcCamp_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "47d3ea88e102c9af278f1965813808f018d4e5f5ceee8fd2a0c9e8bf84b33287"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "RuinedHighlands",
+      "file": "RPGSystem_RuinedHighlands_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "5788f2990fe6598c2cd4cd857c9b879b04ac7812483245539a28a3a1905a55b0"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "CursedCrypt",
+      "file": "RPGSystem_CursedCrypt_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "d4044d4f49f4c0fa22a189c2721ec4b19e3eec24907e06df80ab9713ed24e90c"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "DarkCitadel",
+      "file": "RPGSystem_DarkCitadel_Background_1536x864.png",
+      "size": [
+        1536,
+        864
+      ],
+      "mode": "RGB",
+      "sha256": "360832fabb41c20983fc893b4b20572c70dbda46fff81efee55e64ba90dc1c40"
+    }
+  ]
+}
