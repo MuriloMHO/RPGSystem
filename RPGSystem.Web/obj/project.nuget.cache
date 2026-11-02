@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+6R4AuDmWcA=",
+  "dgSpecHash": "Xsxp53+Y7Ig=",
   "success": true,
-  "projectFilePath": "G:\\My Drive\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
+  "projectFilePath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.14\\microsoft.aspnetcore.app.internal.assets.10.0.14.nupkg.sha512",
     "C:\\Users\\Murilo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.12\\microsoft.aspnetcore.authorization.10.0.12.nupkg.sha512",

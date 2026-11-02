@@ -2118,11 +2118,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\My Drive\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
       "projectName": "RPGSystem.Web",
-      "projectPath": "G:\\My Drive\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
+      "projectPath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\RPGSystem.Web.csproj",
       "packagesPath": "C:\\Users\\Murilo\\.nuget\\packages\\",
-      "outputPath": "G:\\My Drive\\RPGSystem\\RPGSystem.Web\\obj\\",
+      "outputPath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2144,8 +2144,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "G:\\My Drive\\RPGSystem\\RPGSystem\\RPGSystem.csproj": {
-              "projectPath": "G:\\My Drive\\RPGSystem\\RPGSystem\\RPGSystem.csproj"
+            "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem\\RPGSystem.csproj": {
+              "projectPath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem\\RPGSystem.csproj"
             }
           }
         }
