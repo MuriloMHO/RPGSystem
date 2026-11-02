@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|c:\\users\\murilo\\onedrive\\documents\\github\\rpgsystem\\rpgsystem.web\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|solutionrelative:rpgsystem.web\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|NewFolder1{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
       "RelativeMoniker": "D:0:0:{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|NewFolder1{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|solutionrelative:deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|c:\\users\\murilo\\onedrive\\documents\\github\\rpgsystem\\rpgsystem.web\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|solutionrelative:rpgsystem.web\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|c:\\users\\murilo\\onedrive\\documents\\github\\rpgsystem\\rpgsystem.web\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|solutionrelative:rpgsystem.web\\pages\\shop.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|c:\\users\\murilo\\onedrive\\documents\\github\\rpgsystem\\rpgsystem.web\\pages\\mainmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,20 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "deploy.yml",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml",
               "RelativeDocumentMoniker": "deploy.yml",
               "ToolTip": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml",
               "RelativeToolTip": "deploy.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2026-11-02T22:57:34.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "RPGSystem.Web\\wwwroot\\index.html",
@@ -151,15 +151,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Shop.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Shop.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Shop.razor",
               "ToolTip": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Shop.razor",
               "RelativeToolTip": "RPGSystem.Web\\Pages\\Shop.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-02T20:49:27.85Z"
+              "WhenOpened": "2026-11-02T20:49:27.85Z",
+              "EditorCaption": ""
             }
           ]
         }
