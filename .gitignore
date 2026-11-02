@@ -1,0 +1,10 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# User-specific settings
+*.user
+*.suo
