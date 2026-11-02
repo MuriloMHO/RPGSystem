@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path="deploy.yml" />
+  </Folder>
   <Project Path="RPGSystem.Web/RPGSystem.Web.csproj" Id="9d55c810-952b-4a71-b352-da7eb4194c1e" />
   <Project Path="RPGSystem/RPGSystem.csproj" />
 </Solution>
