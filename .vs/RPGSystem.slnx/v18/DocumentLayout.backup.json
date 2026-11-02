@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|NewFolder1{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|NewFolder1{2AA30E2B-16D1-4CF3-96D4-208D7CBDBEA4}|solutionrelative:deploy.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|c:\\users\\murilo\\onedrive\\documents\\github\\rpgsystem\\rpgsystem.web\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D55C810-952B-4A71-B352-DA7EB4194C1E}|RPGSystem.Web\\RPGSystem.Web.csproj|solutionrelative:rpgsystem.web\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -51,6 +55,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "deploy.yml",
+              "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml",
+              "RelativeDocumentMoniker": "deploy.yml",
+              "ToolTip": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\deploy.yml",
+              "RelativeToolTip": "deploy.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-11-02T22:57:34.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "RPGSystem.Web\\wwwroot\\index.html",
@@ -62,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainMenu.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\MainMenu.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\MainMenu.razor",
@@ -74,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Inventory.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Inventory.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Inventory.razor",
@@ -86,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Home.razor",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Encounter.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Encounter.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Encounter.razor",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Areas.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Areas.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Areas.razor",
@@ -122,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "GameEncounter.cs",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem\\Coordinators\\GameEncounter.cs",
               "RelativeDocumentMoniker": "RPGSystem\\Coordinators\\GameEncounter.cs",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Shop.razor",
               "DocumentMoniker": "C:\\Users\\Murilo\\OneDrive\\Documents\\GitHub\\RPGSystem\\RPGSystem.Web\\Pages\\Shop.razor",
               "RelativeDocumentMoniker": "RPGSystem.Web\\Pages\\Shop.razor",
