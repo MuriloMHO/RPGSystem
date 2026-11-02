@@ -1,6 +1,7 @@
 ﻿@page "/inventory"
 @inject GameSessionState CurrentSession
 @using RPGSystem.Items
+@using RPGSystem.Items.ItemTypes
 
 <a href="mainmenu">Main Menu</a>
 <h1>Inventory</h1>
@@ -29,7 +30,14 @@
     @if (selectedItem != null)
     {
         <p>Name: @selectedItem.Name</p>
-        <p>Value: @selectedItem.Value</p>
+        @if(selectedItem is Elixir)
+        {
+            <p>Value: Heal the Player full Health</p>
+        }
+        else
+        {
+            <p>Value: @selectedItem.Value</p>
+        }
         <p>Cost: @selectedItem.Cost</p>
 
         <button disabled="@(!canBeUsed)" @onclick="UseItemInventory">Use Item</button>
