@@ -36,7 +36,8 @@
     }
 
     @if (CurrentSession.CurrentGame?.CurrentEncounter != null &&
-        CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
+        (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active ||
+        CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory))
     {
         <a href="encounter">Return to battle</a>
     }
