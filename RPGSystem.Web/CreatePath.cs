@@ -12,7 +12,7 @@ namespace RPGSystem.Web
     {
         public static string CreateAreaPath(Area area)
         {
-            string imagePath = "Assets/Backgrounds";
+            string imagePath = "Assets/Backgrounds/";
 
             if (area is GreenFields)
             {
@@ -32,11 +32,11 @@ namespace RPGSystem.Web
             }
             else if (area is CursedCrypt)
             {
-                imagePath += "/CursedCrypt.png";
+                imagePath += "CursedCrypt.png";
             }
             else if (area is DarkCitadel)
             {
-                imagePath += "/DarkCitadel.png";
+                imagePath += "DarkCitadel.png";
             }
 
             return imagePath;
