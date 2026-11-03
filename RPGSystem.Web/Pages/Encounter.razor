@@ -13,7 +13,12 @@
             <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
             <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
 
-            <img src="@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)"/>
+            <div class="battle-scene" 
+                 style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
+
+                <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)"/>
+                <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)"/>
+            </div>
 
             <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
 
@@ -24,12 +29,10 @@
             <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
             <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
 
-            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)"/>
 
             <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
             <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
 
-            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)"/>
 
             <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
             <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>

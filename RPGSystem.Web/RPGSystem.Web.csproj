@@ -16,4 +16,8 @@
     <ProjectReference Include="..\RPGSystem\RPGSystem.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
 </Project>

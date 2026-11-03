@@ -1,0 +1,7 @@
+/* CSS for Encounter component */
+
+#battle-scene{
+    width: 90vw;
+    background: cover center no-repeat;
+    aspect-ratio: 16/9;
+}
