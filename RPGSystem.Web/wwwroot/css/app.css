@@ -1,0 +1,45 @@
+.loading-progress {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    margin: -32px 0 0 -32px;
+    animation: spin 1s linear infinite;
+}
+
+    .loading-progress circle {
+        fill: none;
+        stroke: #888;
+        stroke-width: 6;
+        opacity: 0.2;
+    }
+
+        .loading-progress circle:last-child {
+            stroke: #7c5cff;
+            opacity: 1;
+            stroke-dasharray: 80 180;
+            stroke-linecap: round;
+        }
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background-color: #b32121;
+    color: white;
+    z-index: 1000;
+}
+
+    #blazor-error-ui a {
+        color: white;
+    }
