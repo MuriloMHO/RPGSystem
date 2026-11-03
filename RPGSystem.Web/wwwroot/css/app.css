@@ -1,4 +1,5 @@
 @charset "UTF-8";
 
+@import url('reset.css');
 @import url('base.css');
 @import url('loading.css');
