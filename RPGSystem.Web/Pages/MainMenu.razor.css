@@ -1,0 +1,43 @@
+/* CSS for MainMenu component */
+
+#mainmenu {
+    display: flex;
+
+    flex-direction:column;
+
+    align-content: center;
+    justify-content: center;
+
+    width:fit-content;
+    height:fit-content;
+}
+
+#character-profile {
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:center;
+}
+
+#stats-img {
+    width: 15vh;
+    border: 1px solid var(--eletric-blue);
+}
+
+#character-stats {
+    display:flex;
+
+    flex-direction:column;
+
+    align-content:center;
+    justify-content:flex-start;
+
+    border:1px solid var(--gunmetal);
+}
+
+#mainmenu-links {
+    display: flex;
+
+    flex-direction: column;
+}
