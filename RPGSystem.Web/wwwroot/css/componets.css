@@ -52,6 +52,7 @@ a {
     padding: 8px;
 
     font-family: var(--styled-font);
+    font-weight: bolder;
     font-size: var(--call-to-action);
 
     border: 1px solid var(--eletric-blue);
@@ -59,6 +60,5 @@ a {
 
     color: var(--eletric-blue);
     background-color: var(--gunmetal);
-
     text-decoration: none;
 }
