@@ -12,6 +12,8 @@
             <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
             <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
 
+            <img src="@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)"/>
+
             <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
 
             <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
