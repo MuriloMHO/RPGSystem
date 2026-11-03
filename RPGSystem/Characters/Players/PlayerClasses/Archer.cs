@@ -5,7 +5,6 @@
         public Archer(string? name)
         {
             Name = name;
-            ImagePath = "Assets/Characters/Players/Archer.png";
             MaxHealth = 90;
             Health = MaxHealth;
             Attack = 8;

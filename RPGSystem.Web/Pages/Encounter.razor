@@ -21,10 +21,12 @@
             <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
             <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
 
-            <img src="@CurrentSession.CurrentGame.Player.ImagePath"/>
+            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)"/>
 
             <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
             <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
+
+            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)"/>
 
             <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
             <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>

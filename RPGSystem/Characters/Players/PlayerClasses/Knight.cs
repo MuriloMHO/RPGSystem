@@ -5,7 +5,6 @@
         public Knight(string? name)
         {
             Name = name;
-            ImagePath = "Assets/Characters/Players/Knight.png";
             MaxHealth = 130;
             Health = MaxHealth;
             Attack = 5;

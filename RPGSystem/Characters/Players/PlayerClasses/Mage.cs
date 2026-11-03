@@ -5,7 +5,6 @@
         public Mage(string? name)
         {
             Name = name;
-            ImagePath = "Assets/Characters/Players/Mage.png";
             MaxHealth = 80;
             Health = MaxHealth;
             Attack = 10;

@@ -6,7 +6,6 @@ namespace RPGSystem.Characters
     {
         protected static readonly Random characterRNG = new();
         public string? Name { get; protected set; }
-        public string? ImagePath { get; protected set; }
         public int MaxHealth { get; protected set; }
         public int Attack { get; protected set; }
         public int Skill { get; protected set; }
