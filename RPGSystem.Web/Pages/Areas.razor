@@ -1,6 +1,7 @@
 ﻿@page "/areas"
 
 @inject GameSessionState CurrentSession
+@inject NavigationManager Navigation
 
 @using RPGSystem.Areas
 @using RPGSystem.Areas.AreaTypes
@@ -30,9 +31,7 @@
     @if (CurrentSession?.CurrentGame?.CurrentEncounter?.Area != null && 
         CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
     {
-        <p>Encounter Started</p>
-        <p>Active Encounter: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
-        <a href="encounter">Battle</a>
+        Navigation.NavigateTo("encounter");
     }
     else if (encounterStarted == false)
     {

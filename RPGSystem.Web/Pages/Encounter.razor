@@ -1,6 +1,7 @@
 ﻿@page "/encounter"
 
 @inject GameSessionState CurrentSession
+@inject NavigationManager Navigation
 
 @if (CurrentSession?.CurrentGame != null)
 {
@@ -42,13 +43,11 @@
             }
             else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Escaped)
             {
-                <p>You escaped successfully</p>
-                <a href="areas">Areas</a>
+                Navigation.NavigateTo("areas");
             }
             else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Defeat)
             {
-                <p>Game Over! b'_')b</p>
-                <a href="">Home</a>
+                Navigation.NavigateTo("");
             }
         }
         else
