@@ -1,0 +1,64 @@
+﻿h1 {
+    margin: 8px 0px;
+
+    font-family: var(--styled-font);
+    font-size: var(--header);
+
+    color: white;
+}
+
+p {
+    margin: 8px 0px;
+
+    font-family: var(--general-font);
+    font-size: var(--normal);
+
+    color: white;
+}
+
+input {
+    padding: 8px;
+
+    font-family: var(--styled-font);
+    font-size: var(--call-to-action);
+
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+
+    color: white;
+    background-color: var(--gunmetal);
+}
+
+    input:focus, textarea:focus {
+        outline: none;
+        border: 1px solid var(--eletric-blue);
+    }
+
+button {
+    padding: 8px;
+
+    font-family: var(--styled-font);
+    font-weight: bolder;
+    font-size: var(--call-to-action);
+
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+
+    color: var(--eletric-blue);
+    background-color: var(--gunmetal);
+}
+
+a {
+    padding: 8px;
+
+    font-family: var(--styled-font);
+    font-size: var(--call-to-action);
+
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+
+    color: var(--eletric-blue);
+    background-color: var(--gunmetal);
+
+    text-decoration: none;
+}

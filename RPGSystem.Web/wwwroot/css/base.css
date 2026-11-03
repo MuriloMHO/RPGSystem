@@ -6,10 +6,10 @@
     --teal: #45a29e;
 
     --general-font: 'Montserrat', sans-serif;
-    --heading-font: 'Orbitron', sans-serif;
+    --styled-font: 'Orbitron', sans-serif;
 
     --bigger-header: max(30px, 3vw);
     --header: max(16px, 1.3vw);
-    --normal-font: max(16px, 1vw);
+    --normal: max(16px, 1vw);
     --call-to-action: max(16px, 1.5vw);
 }

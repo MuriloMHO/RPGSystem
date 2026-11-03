@@ -1,26 +1,34 @@
 ﻿@page "/"
+
 @inject GameSessionState CurrentSession
+@inject NavigationManager Navigation
+
 @using RPGSystem.Characters.Players
 @using RPGSystem.Characters.Players.PlayerClasses
 
-<h1>Please enter a name and choose your class.</h1>
+<div id="character-selection-container">
+    <input @bind="playerName" placeholder="Name*" />
 
-<input @bind="playerName"/>
+    <div class="character-selection-div">
+        <button @onclick="ChooseKnight" class="character-selection-button">Knight</button>
+        <img src="@CreatePath.CreateCharacterPath(new Knight(""))" class="character-selection-img" />
+    </div>
 
-<button @onclick="ChooseKnight">Knight</button>
+    <div class="character-selection-div">
+        <button @onclick="ChooseArcher" class="character-selection-button">Archer</button>
+        <img src="@CreatePath.CreateCharacterPath(new Archer(""))" class="character-selection-img" />
+    </div>
 
-<button @onclick="ChooseArcher">Archer</button>
+    <div class="character-selection-div">
+        <button @onclick="ChooseMage" class="character-selection-button">Mage</button>
+        <img src="@CreatePath.CreateCharacterPath(new Mage(""))" class="character-selection-img" />
+    </div>
 
-<button @onclick="ChooseMage">Mage</button>
-
-@if (CurrentSession.CurrentGame != null && CurrentSession.CurrentGame.Player.Name != null)
-{
-    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
-    <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
-    <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
-
-    <a href="mainmenu">Main Menu</a>
-}
+    @if (CurrentSession.CurrentGame != null && CurrentSession.CurrentGame.Player.Name != null)
+    {
+        Navigation.NavigateTo("mainmenu");
+    }
+</div>
 
 @code {
     string? playerName;
