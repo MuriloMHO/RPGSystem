@@ -5,6 +5,6 @@
 
 #title{
     font-family: var(--heading-font);
-    font-size: var(--header);
+    font-size: var(--bigger-header);
     color: var(--eletric-blue);
 }

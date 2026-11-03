@@ -8,8 +8,8 @@
     --general-font: 'Montserrat', sans-serif;
     --heading-font: 'Orbitron', sans-serif;
 
-    --bigger_header: max(30px, 3vw);
+    --bigger-header: max(30px, 3vw);
     --header: max(16px, 1.3vw);
-    --normal_font: max(16px, 1vw);
-    --call_to_action: max(16px, 1.5vw);
+    --normal-font: max(16px, 1vw);
+    --call-to-action: max(16px, 1.5vw);
 }
