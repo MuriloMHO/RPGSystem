@@ -3,70 +3,72 @@
 @inject GameSessionState CurrentSession
 @inject NavigationManager Navigation
 
-@if (CurrentSession?.CurrentGame != null)
-{
-    @if (CurrentSession.CurrentGame.CurrentEncounter != null)
+<div id="encounter-container">
+    @if (CurrentSession?.CurrentGame != null)
     {
-        @if (CurrentSession.CurrentGame.CurrentEncounter.Area != null && 
-            CurrentSession.CurrentGame.CurrentEncounter.Enemy != null)
+        @if (CurrentSession.CurrentGame.CurrentEncounter != null)
         {
-            <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
-            <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
-
-            <div id="battle-scene" 
-                 style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
-
-                <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)"/>
-                <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)"/>
-            </div>
-
-            <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
-
-            <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
-            <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
-            <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
-            <p>Experience: @CurrentSession.CurrentGame.Player.Experience</p>
-            <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
-            <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
-
-
-            <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
-            <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
-
-
-            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
-            <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>
-            <a href="inventory">Inventory</a>
-            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
-
-            @if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory)
+            @if (CurrentSession.CurrentGame.CurrentEncounter.Area != null &&
+                CurrentSession.CurrentGame.CurrentEncounter.Enemy != null)
             {
-                <p>You won the battle</p>
-                <a href="areas">Areas</a>
+                <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
+                <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
+
+                <div id="battle-scene"
+                     style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
+
+                    <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" />
+                    <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)" />
+                </div>
+
+                <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
+
+                <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
+                <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+                <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+                <p>Experience: @CurrentSession.CurrentGame.Player.Experience</p>
+                <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+                <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
+
+
+                <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
+                <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
+
+
+                <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
+                <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>
+                <a href="inventory">Inventory</a>
+                <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
+
+                @if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory)
+                {
+                    <p>You won the battle</p>
+                    <a href="areas">Areas</a>
+                }
+                else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Escaped)
+                {
+                    Navigation.NavigateTo("areas");
+                }
+                else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Defeat)
+                {
+                    Navigation.NavigateTo("");
+                }
             }
-            else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Escaped)
+            else
             {
-                Navigation.NavigateTo("areas");
-            }
-            else if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Defeat)
-            {
-                Navigation.NavigateTo("");
+                <p>No active encounter found</p>
             }
         }
         else
         {
-            <p>No active encounter found</p>
+            <p>No encounter found</p>
         }
     }
     else
     {
-        <p>No encounter found</p>
+        <p>No active game found</p>
     }
-}
-else
-{
-    <p>No active game found</p>
-}
+</div>
 
 @code{
     private void EncounterAttack()

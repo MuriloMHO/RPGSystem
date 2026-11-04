@@ -1,0 +1,9 @@
+/* CSS for Areas component */
+
+#areas-container {
+    display:flex;
+
+    flex-direction:column;
+
+    width:75vw;
+}

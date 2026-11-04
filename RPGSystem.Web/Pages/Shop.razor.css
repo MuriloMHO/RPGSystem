@@ -1,0 +1,9 @@
+/* CSS for Shop component */
+
+#shop-container {
+    display:flex;
+
+    flex-direction:column;
+
+    width:75vw;
+}

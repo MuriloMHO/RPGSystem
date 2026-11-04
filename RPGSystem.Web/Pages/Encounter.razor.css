@@ -1,7 +1,17 @@
 /* CSS for Encounter component */
 
+#encounter-container {
+    display:felx;
+
+    flex-direction:column;
+
+    width:75vw;
+}
+
 #battle-scene{
     width: 90vw;
-    background: cover center no-repeat;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
     aspect-ratio: 16/9;
 }

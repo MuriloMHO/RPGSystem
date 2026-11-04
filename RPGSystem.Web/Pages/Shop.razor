@@ -4,47 +4,49 @@
 @using RPGSystem.Items
 @using RPGSystem.Items.ItemTypes
 
-@if (CurrentSession.CurrentGame != null)
-{
-    <a href="mainmenu">Main Menu</a>
-
-    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
-    <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
-
-    @foreach (Item item in CurrentSession.CurrentGame.ItemsToSell)
+<div id="shop-container">
+    @if (CurrentSession.CurrentGame != null)
     {
-        <button @onclick="() => Select(item)">
-            @item.Name
-        </button>
+        <a href="mainmenu">Main Menu</a>
+
+        <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+        <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+
+        @foreach (Item item in CurrentSession.CurrentGame.ItemsToSell)
+        {
+            <button @onclick="() => Select(item)">
+                @item.Name
+            </button>
+        }
+
+        <button disabled="@(selectedItem == null)" @onclick="() => Select(null)">Clear Selection</button>
+
+        @if (selectedItem != null)
+        {
+            <p>Name: @selectedItem.Name</p>
+            @if (selectedItem is Elixir)
+            {
+                <p>Effect: Restores health to maximum.</p>
+            }
+            else
+            {
+                <p>Value: @selectedItem.Value</p>
+            }
+            <p>Cost: @selectedItem.Cost</p>
+
+            <button @onclick="BuyItem">Buy Item</button>
+
+            @if (bought == true)
+            {
+                <p>Thanks for buying @selectedItem.Name</p>
+            }
+            else if (bought == false)
+            {
+                <p>Sorry, transaction failed</p>
+            }
+        }
     }
-
-    <button disabled="@(selectedItem == null)" @onclick="() => Select(null)">Clear Selection</button>
-
-    @if (selectedItem != null)
-    {
-        <p>Name: @selectedItem.Name</p>
-        @if (selectedItem is Elixir)
-        {
-            <p>Effect: Restores health to maximum.</p>
-        }
-        else
-        {
-            <p>Value: @selectedItem.Value</p>
-        }
-        <p>Cost: @selectedItem.Cost</p>
-
-        <button @onclick="BuyItem">Buy Item</button>
-
-        @if (bought == true)
-        {
-            <p>Thanks for buying @selectedItem.Name</p>
-        }
-        else if (bought == false)
-        {
-            <p>Sorry, transaction failed</p>
-        }
-    }
-}
+</div>
 
 @code {
     Item? selectedItem;
