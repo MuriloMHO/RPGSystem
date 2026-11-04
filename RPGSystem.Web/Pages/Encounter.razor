@@ -17,22 +17,27 @@
                 <div id="battle-scene"
                      style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
 
-                    <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" />
-                    <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)" />
+                    <div class="character-info">
+                        <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
+                        <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
+                        <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" />
+                    </div>
+
+                    <div class="character-info">
+                        <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
+                        <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+                        <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)" />
+                    </div>
                 </div>
 
                 <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
 
-                <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
-                <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
                 <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
                 <p>Experience: @CurrentSession.CurrentGame.Player.Experience</p>
                 <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
                 <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
 
 
-                <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
-                <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
 
 
                 <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
