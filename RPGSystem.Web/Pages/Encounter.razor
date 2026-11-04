@@ -13,7 +13,7 @@
             <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
             <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
 
-            <div class="battle-scene" 
+            <div id="battle-scene" 
                  style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
 
                 <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)"/>
