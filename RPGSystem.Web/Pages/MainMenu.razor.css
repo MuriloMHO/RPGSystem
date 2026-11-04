@@ -5,6 +5,8 @@
 
     flex-direction:column;
 
+    width:100%;
+
     align-content: center;
     justify-content: center;
 
@@ -13,31 +15,38 @@
 }
 
 #character-profile {
-    display:flex;
-
-    flex-direction:row;
-
-    align-items:center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom:8px;;
+    border: 1px solid var(--eletric-blue);
+    border-radius:4px;
 }
 
 #stats-img {
     width: 15vh;
-    border: 1px solid var(--eletric-blue);
 }
 
 #character-stats {
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    align-content:center;
-    justify-content:flex-start;
+    align-content: center;
+    justify-content: flex-start;
 
-    border:1px solid var(--gunmetal);
+    width:100%;
+    height:100%;
+
+    padding:8px;
 }
 
-#mainmenu-links {
+#main-menu-links {
     display: flex;
 
     flex-direction: column;
 }
+    
+    .main-menu-link{
+        margin-top:8px;
+    }

@@ -2,30 +2,25 @@
 
 @inject GameSessionState CurrentSession
 
-
-
-
 @if (CurrentSession.CurrentGame?.Player != null)
 {
     <div id="mainmenu">
-        <div>
-            <div id="character-profile">
-                <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="stats-img" />
-                <div id="character-stats">
-                    <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
-                    <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
-                    <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
-                </div>
+        <div id="character-profile">
+            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="stats-img" />
+            <div id="character-stats">
+                <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+                <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+                <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
             </div>
-            @if (CurrentSession.CurrentGame != null)
-            {
-                <div id="mainmenu-links">
-                    <a href="inventory">Inventory</a>
-                    <a href="areas">Areas</a>
-                    <a href="shop">Shop</a>
-                </div>
-            }
         </div>
+        @if (CurrentSession.CurrentGame != null)
+        {
+            <div id="main-menu-links">
+                <a href="inventory" class="main-menu-link">Inventory</a>
+                <a href="areas" class="main-menu-link">Areas</a>
+                <a href="shop" class="main-menu-link">Shop</a>
+            </div>
+        }
     </div>
 }
 else
