@@ -8,10 +8,26 @@
     width:75vw;
 }
 
-#battle-scene{
-    width: 90vw;
+#battle-scene {
+    display:flex;
+
+    align-items:end;
+    justify-content:space-between;
+
+    width: 100%;
+
+    padding: 8px 16px 16px 16px;
+
+    border:1px solid var(--eletric-blue);
+    border-radius:4px;
+
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
     aspect-ratio: 16/9;
+}
+
+#battle-scene > img {
+    width: 25%;
+    aspect-ratio: 1/1;
 }
