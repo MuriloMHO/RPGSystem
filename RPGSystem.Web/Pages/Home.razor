@@ -9,24 +9,26 @@
 <div id="character-selection-container">
     <input @bind="playerName" placeholder="Name*" id="name-input"/>
 
-    <div class="character-selection-div">
-        <button @onclick="ChooseKnight" class="character-selection-button">Knight</button>
-        <img src="@CreatePath.CreateCharacterPath(new Knight(""))" class="character-selection-img" />
-    </div>
+        <button @onclick="ChooseKnight" class="character-selection-button">
+            Knight
+            <img src="@CreatePath.CreateCharacterPath(new Knight(""))" class="character-selection-img" />
+        </button>
+        
+        <button @onclick="ChooseArcher" class="character-selection-button">
+            Archer
+            <img src="@CreatePath.CreateCharacterPath(new Archer(""))" class="character-selection-img" />
+        </button>
+        
 
-    <div class="character-selection-div">
-        <button @onclick="ChooseArcher" class="character-selection-button">Archer</button>
-        <img src="@CreatePath.CreateCharacterPath(new Archer(""))" class="character-selection-img" />
-    </div>
-
-    <div class="character-selection-div">
-        <button @onclick="ChooseMage" class="character-selection-button">Mage</button>
-        <img src="@CreatePath.CreateCharacterPath(new Mage(""))" class="character-selection-img" />
-    </div>
+        <button @onclick="ChooseMage" class="character-selection-button">
+            Mage
+            <img src="@CreatePath.CreateCharacterPath(new Mage(""))" class="character-selection-img" />
+        </button>
+        
 
     @if (CurrentSession.CurrentGame != null && CurrentSession.CurrentGame.Player.Name != null)
     {
-        <a href="mainmenu">Start!</a>
+        <a href="mainmenu" id="start">Start!</a>
     }
 </div>
 

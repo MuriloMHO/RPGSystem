@@ -1,0 +1,69 @@
+/* CSS for Inventory component */
+
+#inventory-container {
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    width:75vw;
+}
+
+#character-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0px;
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+}
+
+#stats-img {
+    width: 15vh;
+}
+
+#character-stats {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.inventory-title {
+    margin-bottom:16px;
+
+    color:var(--eletric-blue);
+    text-align:center;
+}
+
+.items {
+    margin-top: 8px;
+}
+
+#item-stats {
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    margin-top:8px;
+
+    border:1px solid var(--eletric-blue);
+    border-radius:4px;
+}
+
+#item-stats > p {
+    text-align:center;
+    margin: 0px 0px 16px 0px;
+}
+
+.item-usage {
+    align-self:center;
+
+    width:80%;
+
+    margin-bottom:8px;
+}

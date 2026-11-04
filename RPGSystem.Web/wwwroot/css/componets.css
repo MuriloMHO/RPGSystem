@@ -4,7 +4,7 @@
     font-family: var(--styled-font);
     font-size: var(--header);
 
-    color: white;
+    color: var(--eletric-blue);
 }
 
 p {
@@ -13,7 +13,7 @@ p {
     font-family: var(--general-font);
     font-size: var(--normal);
 
-    color: white;
+    color: var(--eletric-blue);
 }
 
 input {
@@ -60,5 +60,7 @@ a {
 
     color: var(--eletric-blue);
     background-color: var(--gunmetal);
+
+    text-align:center;
     text-decoration: none;
 }

@@ -1,24 +1,22 @@
 /* CSS for MainMenu component */
 
-#mainmenu {
+#main-menu {
     display: flex;
 
     flex-direction:column;
 
-    width:100%;
-
     align-content: center;
     justify-content: center;
 
-    width:fit-content;
-    height:fit-content;
+    width:75vw;
 }
 
 #character-profile {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom:8px;;
+    justify-content:center;
+    margin-bottom:8px;
     border: 1px solid var(--eletric-blue);
     border-radius:4px;
 }
@@ -31,12 +29,6 @@
     display: flex;
 
     flex-direction: column;
-
-    align-content: center;
-    justify-content: flex-start;
-
-    width:100%;
-    height:100%;
 
     padding:8px;
 }

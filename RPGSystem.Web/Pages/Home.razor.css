@@ -8,16 +8,20 @@
     align-items: center;
     justify-content:center;
 
-    width:75Vw;
+    width:75vw;
 }
 
 #name-input {
     width:100%;
+
+    margin-bottom:8px;
 }
 
-.character-selection-div {
+.character-selection-button {
     display: flex;
+
     align-items: center;
+    justify-content: center;
 
     width: 100%;
     height: fit-content;
@@ -25,13 +29,17 @@
     margin-top: 8px;
 
     border: 1px solid var(--eletric-blue);
-    border-radius:4px;
-}
-
-.character-selection-button {
-    border: 0px solid black;
+    border-radius: 4px;
 }
 
 .character-selection-img {
     width: 15vh;
+}
+
+#start {
+    text-align:center;
+
+    width:100%;
+
+    margin:16px;
 }

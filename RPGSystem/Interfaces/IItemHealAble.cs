@@ -2,7 +2,7 @@
 
 namespace RPGSystem.Interfaces
 {
-    internal interface IItemHealAble
+    public interface IItemHealAble
     {
         public void UseHealItem(Player player);
     }
