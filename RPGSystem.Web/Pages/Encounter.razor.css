@@ -1,11 +1,15 @@
 /* CSS for Encounter component */
 
 #encounter-container {
-    display:felx;
+    display:flex;
 
     flex-direction:column;
 
-    width:90vw;
+    width:75vw;
+}
+
+#encounter-container > p {
+    text-align:center;
 }
 
 #battle-container {
@@ -13,7 +17,7 @@
 
     flex-direction:column;
 
-    padding-bottom:8px;
+    padding: 8px 8px 4px 8px;
 
     border:1px solid var(--eletric-blue);
     border-radius:1px;
@@ -24,16 +28,10 @@
     aspect-ratio: 16/9;
 }
 
-#battle-container p, button, a {
-    font-size:35%;
-    font-weight:normal;
-
-    margin:0px;
-    padding:0px;
-}
-
-    #battle-container button, a {
-        width: 90%;
+    #battle-container p {
+        font-size: 50%;
+        margin: 0px;
+        padding: 0px;
     }
 
 #battle-scene {
@@ -41,7 +39,7 @@
 
     flex:5;
 
-    padding:8px 8px 2px 8px;
+    padding-bottom:4px;
 }
 
 
@@ -50,7 +48,7 @@
 
         flex-direction:column;
 
-        flex:4;
+        flex:3;
     }
 
         #player-stats {
@@ -98,7 +96,7 @@
 
         flex-direction:column;
 
-        flex:4;
+        flex:3;
 
         align-items:end;
     }
@@ -142,10 +140,10 @@
         align-items:center;
         justify-content:center;
 
-        flex:2;
+        flex:1;
         height:100%;
 
-        margin:0px 2px 0px 8px;
+        margin:0px 4px 0px 0px;
         padding:4px;
 
         background-color:var(--gunmetal);
@@ -153,27 +151,14 @@
         border-radius:4px;
     }
 
-    #actions {
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-        justify-content:space-between;
-
-        flex:1;
-        height:100%;
-
-        margin:0px 2px;
-    }
 
     #battle-log {
         display:flex;
 
-        flex:2;
+        flex:1;
         height:100%;
 
-        margin: 0px 8px 0px 2px;
+        margin: 0px 0px 0px 4px;
         padding:4px;
 
         background-color:var(--gunmetal);
@@ -181,3 +166,27 @@
         border-radius:4px;
     }
 
+#actions {
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    flex:1;
+    height:fit-content;
+
+    padding: 8px;
+
+    background-color:var(--gunmetal);
+    border:1px solid var(--eletric-blue);
+    border-top:0px;
+    border-radius:0px 0px 4px 4px;
+}
+
+#actions button, #actions a {
+    flex:1;
+
+    margin:0px 4px;
+
+    font-size:10%;
+}

@@ -41,18 +41,18 @@
                             <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
                         </div>
 
-                        <div id="actions">
-                            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
-                            <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill: @CurrentSession.CurrentGame.Player.SkillCooldown</button>
-                            <a href="inventory">Inventory</a>
-                            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
-                        </div>
 
                         <div id="battle-log">
                         </div>
                     </div>
                 </div>
 
+                <div id="actions">
+                    <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
+                    <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill: @CurrentSession.CurrentGame.Player.SkillCooldown</button>
+                    <a href="inventory">Inventory</a>
+                    <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
+                </div>
                 
 
                 @if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory)
