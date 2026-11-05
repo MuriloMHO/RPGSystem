@@ -5,21 +5,18 @@
 
     flex-direction:column;
 
-    width:75vw;
+    width:90vw;
 }
 
-#battle-scene {
+#battle-container {
     display:flex;
 
-    align-items:end;
-    justify-content:space-between;
+    flex-direction:column;
 
-    width: 100%;
-
-    padding: 8px 16px 16px 16px;
+    padding-bottom:8px;
 
     border:1px solid var(--eletric-blue);
-    border-radius:4px;
+    border-radius:1px;
 
     background-position:center;
     background-size:cover;
@@ -27,22 +24,160 @@
     aspect-ratio: 16/9;
 }
 
-.character-info {
+#battle-container p, button, a {
+    font-size:35%;
+    font-weight:normal;
+
+    margin:0px;
+    padding:0px;
+}
+
+    #battle-container button, a {
+        width: 90%;
+    }
+
+#battle-scene {
     display:flex;
 
-    flex-direction:column;
+    flex:5;
 
-    width: 100%;
-    height: 100%;
+    padding:8px 8px 2px 8px;
 }
 
-#battle-scene img {
-    justify-self:end;
 
-    width: 50%;
-    aspect-ratio: 1/1;
-}
+    #player-info {
+        display:flex;
 
-#battle-scene p {
-    font-size:50%;
+        flex-direction:column;
+
+        flex:4;
+    }
+
+        #player-stats {
+            display:flex;
+
+            flex-direction:column;
+
+            height:fit-content;
+            width:fit-content;
+
+            padding:4px;
+
+            background-color:var(--gunmetal);
+            border:1px solid var(--eletric-blue);
+            border-radius:4px;
+        }
+
+        #player-img {
+            width:50%;
+
+            aspect-ratio:1/1;
+
+            margin-top:auto;
+        }
+
+    #turns {
+        display:flex;
+
+        flex:1;
+
+        justify-content:center;
+        
+        height:fit-content;
+        width:fit-content;
+        
+        padding:4px;
+
+        background-color:var(--gunmetal);
+        border:1px solid var(--eletric-blue);
+        border-radius:4px;
+    }
+
+    #enemy-info {
+        display:flex;
+
+        flex-direction:column;
+
+        flex:4;
+
+        align-items:end;
+    }
+
+        #enemy-stats {
+            display:flex;
+
+            flex-direction:column;
+            
+            height:fit-content;
+            width:fit-content;
+            
+            padding:4px;
+
+            background-color:var(--gunmetal);
+            border:1px solid var(--eletric-blue);
+            border-radius:4px;
+        }
+    
+        #enemy-img {
+            width:50%;
+
+            aspect-ratio:1/1;
+
+            margin-top:auto;
+        }
+
+
+#battle-menu{
+    display:flex;
+
+    flex:2;
+
+    height:30%;
 }
+    #stats-display {
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+        justify-content:center;
+
+        flex:2;
+        height:100%;
+
+        margin:0px 2px 0px 8px;
+        padding:4px;
+
+        background-color:var(--gunmetal);
+        border:1px solid var(--eletric-blue);
+        border-radius:4px;
+    }
+
+    #actions {
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+        justify-content:space-between;
+
+        flex:1;
+        height:100%;
+
+        margin:0px 2px;
+    }
+
+    #battle-log {
+        display:flex;
+
+        flex:2;
+        height:100%;
+
+        margin: 0px 8px 0px 2px;
+        padding:4px;
+
+        background-color:var(--gunmetal);
+        border:1px solid var(--eletric-blue);
+        border-radius:4px;
+    }
+

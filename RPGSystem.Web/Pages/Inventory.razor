@@ -6,9 +6,16 @@
 
 <div id="inventory-container">
 
-    @if (CurrentSession.CurrentGame != null)
+    @if (CurrentSession.CurrentGame?.Player != null)
     {
         <a href="mainmenu">Main Menu</a>
+
+        @if (CurrentSession.CurrentGame?.CurrentEncounter != null &&
+            (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active ||
+            CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory))
+        {
+            <a href="encounter">View Encounter</a>
+        }
 
         <div id="character-profile">
             <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="stats-img" />
@@ -59,13 +66,6 @@
             CurrentSession.CurrentGame.Player.Inventory.Count < 1)
         {
             <p>Inventory is empty</p>
-        }
-
-        @if (CurrentSession.CurrentGame?.CurrentEncounter != null &&
-            (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active ||
-            CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory))
-        {
-            <a href="encounter">View Encounter</a>
         }
     }
 </div>

@@ -11,39 +11,49 @@
             @if (CurrentSession.CurrentGame.CurrentEncounter.Area != null &&
                 CurrentSession.CurrentGame.CurrentEncounter.Enemy != null)
             {
-                <p>Status: @CurrentSession.CurrentGame.CurrentEncounter.Status</p>
-                <p>Area: @CurrentSession.CurrentGame.CurrentEncounter.Area.Name</p>
+                <div id="battle-container"
+                         style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
 
-                <div id="battle-scene"
-                     style="background-image: url('@CreatePath.CreateAreaPath(CurrentSession.CurrentGame.CurrentEncounter.Area)')">
+                    <div id="battle-scene">
+                        <div id="player-info">
+                            <div id="player-stats">
+                                <p>HP: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+                            </div>
+                            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="player-img"/>
+                        </div>
 
-                    <div class="character-info">
-                        <p>Enemy: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Name</p>
-                        <p>Health: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
-                        <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" />
+                        <div id="turns">
+                            <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
+                        </div>
+
+                        <div id="enemy-info">
+                            <div id="enemy-stats">
+                                <p>HP: @CurrentSession.CurrentGame.CurrentEncounter.Enemy.Health/@CurrentSession.CurrentGame.CurrentEncounter.Enemy.MaxHealth</p>
+                            </div>
+                            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)" id="enemy-img"/>
+                        </div>
                     </div>
 
-                    <div class="character-info">
-                        <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
-                        <p>Health: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
-                        <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.CurrentEncounter.Enemy)" />
+                    <div id="battle-menu">
+                        <div id="stats-display">
+                            <p>Player: @CurrentSession.CurrentGame.Player.Name</p>
+                            <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+                            <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+                        </div>
+
+                        <div id="actions">
+                            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
+                            <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill: @CurrentSession.CurrentGame.Player.SkillCooldown</button>
+                            <a href="inventory">Inventory</a>
+                            <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
+                        </div>
+
+                        <div id="battle-log">
+                        </div>
                     </div>
                 </div>
 
-                <p>Turn: @CurrentSession.CurrentGame.CurrentEncounter.TurnCount</p>
-
-                <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
-                <p>Experience: @CurrentSession.CurrentGame.Player.Experience</p>
-                <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
-                <p>Skill Cooldown: @CurrentSession.CurrentGame.Player.SkillCooldown</p>
-
-
-
-
-                <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterAttack">Attack</button>
-                <button disabled="@(CurrentSession.CurrentGame.Player.SkillCooldown > 0 || CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterSkill">Skill</button>
-                <a href="inventory">Inventory</a>
-                <button disabled="@(CurrentSession.CurrentGame.CurrentEncounter.Status != Coordinators.EncounterStatus.Active)" @onclick="EncounterFlee">Flee</button>
+                
 
                 @if (CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Victory)
                 {

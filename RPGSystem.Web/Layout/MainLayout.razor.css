@@ -15,8 +15,8 @@
     font-family: var(--styled-font);
     font-size: var(--bigger-header);
 
-    color: var(--eletric-blue);
-}
+    border: 0px solid black;
+ }
 
 #main {
     display: flex;
