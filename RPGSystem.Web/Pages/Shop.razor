@@ -3,47 +3,66 @@
 @inject GameSessionState CurrentSession
 @using RPGSystem.Items
 @using RPGSystem.Items.ItemTypes
+@using RPGSystem.Interfaces
 
 <div id="shop-container">
     @if (CurrentSession.CurrentGame != null)
     {
         <a href="mainmenu">Main Menu</a>
 
-        <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
-        <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+        <div id="character-profile">
+            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="stats-img" />
+            <div id="character-stats">
+                <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+                <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+                <p>Gold: @CurrentSession.CurrentGame.Player.Gold</p>
+            </div>
+        </div>
 
-        @foreach (Item item in CurrentSession.CurrentGame.ItemsToSell)
-        {
-            <button @onclick="() => Select(item)">
-                @item.Name
-            </button>
-        }
-
-        <button disabled="@(selectedItem == null)" @onclick="() => Select(null)">Clear Selection</button>
+        <h1 class="item-to-buy-title">
+            Shop
+        </h1>
 
         @if (selectedItem != null)
         {
-            <p>Name: @selectedItem.Name</p>
-            @if (selectedItem is Elixir)
-            {
-                <p>Effect: Restores health to maximum.</p>
-            }
-            else
-            {
-                <p>Value: @selectedItem.Value</p>
-            }
-            <p>Cost: @selectedItem.Cost</p>
+            <div id="item-to-buy">
+                <h1 class="item-to-buy-title">
+                    Item Info
+                </h1>
+                <p>@selectedItem.Name</p>
+                @if (selectedItem is Elixir)
+                {
+                    <p>Effect: Restores HP to maximum.</p>
+                }
+                else if (selectedItem is IItemHealAble)
+                {
+                    <p>Effetc: Restores @selectedItem.Value HP.</p>
+                }
+                else if (selectedItem is IItemDamageAble)
+                {
+                    <p>Effetc: Deals @selectedItem.Value damage.</p>
+                }
 
-            <button @onclick="BuyItem">Buy Item</button>
+                <button disabled="@(selectedItem == null)" @onclick="() => Select(null)" class="item-to-buy-button">Clear Selection</button>
 
-            @if (bought == true)
-            {
-                <p>Thanks for buying @selectedItem.Name</p>
-            }
-            else if (bought == false)
-            {
-                <p>Sorry, transaction failed</p>
-            }
+                <button @onclick="BuyItem" class="item-to-buy-button">Buy Item</button>
+            
+                @if (selectedItem != null && bought == true)
+                {
+                    <p>Thanks for buying @selectedItem.Name.</p>
+                }
+                else if (bought == false)
+                {
+                    <p>Sorry, transaction failed</p>
+                }
+            </div>
+        }
+
+        @foreach (Item item in CurrentSession.CurrentGame.ItemsToSell)
+        {
+            <button @onclick="() => Select(item)" class="items-available">
+                @item.Name
+            </button>
         }
     }
 </div>

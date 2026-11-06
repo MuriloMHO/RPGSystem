@@ -7,3 +7,54 @@
 
     width:75vw;
 }
+
+#character-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0px;
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+}
+
+    #stats-img {
+        width: 15vh;
+    }
+
+    #character-stats {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+.item-to-buy-title{
+    text-align:center;
+}
+
+#item-to-buy {
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:8px;
+
+    border: 1px solid var(--eletric-blue);
+    border-radius: 4px;
+}
+    
+
+    #item-to-buy p {
+        text-align: center;
+    }
+
+    .item-to-buy-button{
+        margin-top:8px;
+    }
+
+.items-available{
+    margin-top:8px;
+}

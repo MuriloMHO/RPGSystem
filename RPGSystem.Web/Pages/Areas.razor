@@ -29,7 +29,7 @@
 
                 <p>Required Level: @selectedArea.RequiredLevel</p>
 
-                <button disabled="@(selectedArea == null)" @onclick="() => SelectArea(null)">Unselect Area</button>
+                <button disabled="@(selectedArea == null)" @onclick="() => SelectArea(null)">Clear Selection</button>
 
                 <button disabled="@(selectedArea == null || CurrentSession.CurrentGame == null)" @onclick="BeginEncounter">Begin Encounter</button>
             </div>
