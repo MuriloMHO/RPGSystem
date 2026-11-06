@@ -19,22 +19,21 @@
     border-radius: 4px;
 }
 
-#stats-img {
-    width: 15vh;
-}
+    #stats-img {
+        width: 15vh;
+    }
 
-#character-stats {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    padding: 8px;
-}
+    #character-stats {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        padding: 8px;
+    }
 
 .inventory-title {
     margin-bottom:16px;
 
-    color:var(--eletric-blue);
     text-align:center;
 }
 

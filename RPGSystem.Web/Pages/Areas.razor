@@ -11,23 +11,37 @@
 
     @if (CurrentSession?.CurrentGame != null)
     {
-        @foreach (Area area in areas)
-        {
-            <button @onclick="() => SelectArea(area)">@area.Name</button>
-            <p>Required Level: @area.RequiredLevel</p>
-        }
+        <div id="character-profile">
+            <img src="@CreatePath.CreateCharacterPath(CurrentSession.CurrentGame.Player)" id="stats-img" />
+            <div id="character-stats">
+                <p>Name: @CurrentSession.CurrentGame.Player.Name</p>
+                <p>Level: @CurrentSession.CurrentGame.Player.Level</p>
+                <p>HP: @CurrentSession.CurrentGame.Player.Health/@CurrentSession.CurrentGame.Player.MaxHealth</p>
+            </div>
+        </div>
 
         @if (selectedArea != null)
         {
-            <p>Selected Area</p>
-            <p>Name: @selectedArea.Name</p>
-            <p>Required Level: @selectedArea.RequiredLevel</p>
+            <div id="selected-area">
+                <h1 id="area-info-title">Area Info</h1>
 
+                <p>@selectedArea.Name</p>
+
+                <p>Required Level: @selectedArea.RequiredLevel</p>
+
+                <button disabled="@(selectedArea == null)" @onclick="() => SelectArea(null)">Unselect Area</button>
+
+                <button disabled="@(selectedArea == null || CurrentSession.CurrentGame == null)" @onclick="BeginEncounter">Begin Encounter</button>
+            </div>
         }
 
-        <button disabled="@(selectedArea == null)" @onclick="() => SelectArea(null)">Unselect Area</button>
-
-        <button disabled="@(selectedArea == null || CurrentSession.CurrentGame == null)" @onclick="BeginEncounter">Begin Encounter</button>
+        @foreach (Area area in areas)
+        {
+            <button @onclick="() => SelectArea(area)" class="select-area-button">
+                <p>@area.Name</p>
+                <img src="@CreatePath.CreateAreaPath(area)" class="area-selection-img"/>
+            </button>
+        }
 
         @if (CurrentSession?.CurrentGame?.CurrentEncounter?.Area != null &&
             CurrentSession.CurrentGame.CurrentEncounter.Status == Coordinators.EncounterStatus.Active)
